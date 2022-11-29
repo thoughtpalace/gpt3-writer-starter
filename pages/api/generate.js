@@ -51,7 +51,7 @@ const generateAction = async (req, res) => {
   // I build Prompt #2.
   const secondPrompt = 
   `
-  Take the text of content and output  below and generate a response written in the style of Kevin Hart and Eddie Murphy. Make it feel like a funny story. Don't just list the points. Go deep into each one. Explain why using curse words.
+  Take the text of content and output  below and generate a response written in the style of Kevin Hart and Eddie Murphy. Make it feel like a funny story. Don't just list the points. Go deep into each one. Explain why using funny words.
 
   content: ${req.body.userInput}
 
