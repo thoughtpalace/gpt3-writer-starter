@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Calendar  from './components/calendar';
 import buildspaceLogo from '../assets/buildspace-logo.png';
 
 import { useState } from 'react';
+import StreakBar from './components/streakbar';
 
 
 const Home = () => {
@@ -38,17 +40,21 @@ const Home = () => {
   return (
     <div className="root">
       <Head>
-        <title>Clap Back!</title>
+        <title>Focus Ai!</title>
       </Head>
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1> Clap Back!  </h1> 
+            <h1> Focus AI  </h1> 
           </div>
           <div className="header-subtitle">
-            <h2> Enter all the text from your worst enemey and make the response you always dreamed of </h2>
+            <h2> Enter A topic and master it through prompts </h2>
           </div>
         </div>
+
+        <div className="streakbar-container" style={{ position: 'absolute', top: 0, left: 0 }}>
+   <StreakBar /> 
+ </div>
         <div className="prompt-container">
           <textarea 
           className="prompt-box"
@@ -58,10 +64,12 @@ const Home = () => {
           
           />
         </div>
+
+
         <div className="prompt-buttons">
     <a className="generate-button" onClick={callGenerateEndpoint}>
       <div className="generate">
-        {isGenerating ? <span class="loader"></span> : <p>Generate</p>}
+        {isGenerating ? <span class="loader"></span> : <p>Learn</p>}
       </div>
     </a>
   </div>
@@ -79,7 +87,7 @@ const Home = () => {
   </div>
 )}
 
-  
+
       </div>
       <div className="badge-container grow">
         <a
@@ -89,7 +97,7 @@ const Home = () => {
         >
           <div className="badge">
             <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>built with hate for your punk ass enemies</p>
+            <p>Learn to focus on mastery</p>
           </div>
         </a>
       </div>

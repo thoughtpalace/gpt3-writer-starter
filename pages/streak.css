@@ -1,0 +1,32 @@
+.streak-bar {
+  /* height: 20px;
+  width: 20px; */
+    background: linear-gradient(to right, #111abe, #111abe, #111abe, #F9A51A, #F9A51A);
+    width: 10px;
+    height: 30px;
+    border-radius: 10px;
+    margin-top: 10px;
+
+  overflow: hidden;
+  position: relative;
+}
+
+.streak-number {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.streakbar-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+

@@ -31,9 +31,9 @@ const openai = new OpenAIApi(configuration)
 
 const basePromptPrefix =
 `
-Write me a detailed funny dirty joke in response to the text below like kevin hart clapping back in detail and hilarious.
+Generate sub topics for the Topic Area to include any sub topics that are related to the Topic Area.  The sub topics should be a mix from beginner to advanced.
 
-text:
+subtopics:
 `
 
 const generateAction = async (req, res) => {
@@ -42,16 +42,25 @@ const generateAction = async (req, res) => {
   const baseCompletion = await openai.createCompletion({
     model: 'text-davinci-002',
     prompt: `${basePromptPrefix}${req.body.userInput}`,
-    temperature: 0.8,
-    max_tokens: 800,
+    temperature: 0.65,
+    max_tokens: 1000,
   });
   
   const basePromptOutput = baseCompletion.data.choices.pop();
 
+
+   /* Take the text of content and output  below and generate a response written in the style of Kevin Hart and Eddie Murphy. Make it feel like a funny story. Don't just list the points. Go deep into each one. Explain why using funny words. */
+
   // I build Prompt #2.
   const secondPrompt = 
   `
-  Take the text of content and output  below and generate a response written in the style of Kevin Hart and Eddie Murphy. Make it feel like a funny story. Don't just list the points. Go deep into each one. Explain why using funny words.
+    Take the subtopics an generate a question and answer format that would work with 
+    a quiz. Make sure the subtopics as a question and answer format. You should give the questions and the answers. If generate a question that requires math equations. Please include mathematical expresssions where necessary.  The questions generated from subtopics should be a mix from beginner to advanced. When you are done please include the correct answer to the question.
+
+     Question: 
+
+     Answer:
+
 
   content: ${req.body.userInput}
 

@@ -1,0 +1,16 @@
+.calendar-container {
+  width: 300px;
+  height: 400px;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-header {
+  height: 50px;
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
