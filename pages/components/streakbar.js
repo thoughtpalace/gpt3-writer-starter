@@ -70,18 +70,18 @@ const StreakBar = () => {
       localStorage.setItem("lastVisit", new Date().toDateString());
   }, []);
 
+  
+
   useEffect(() => {
-      // check if the user is visiting the site on a different day than the last visit
-      if (lastVisit !== new Date().toDateString()) {
-          setStreak(streak + 1);
-          localStorage.setItem("streak", JSON.stringify(streak + 1));
-      }
-      if(streak > 0 && streak < 5) {
-          setColor("orange");
-      } else if (streak >= 5) {
-          setColor("green");
-      }
-  }, [ streak, lastVisit ])
+    // check if the user is visiting the site on a different day than the last visit
+    if (lastVisit !== new Date().toDateString()) {
+        setLastVisit(new Date().toDateString());
+        localStorage.setItem("lastVisit", new Date().toDateString());
+        setStreak(streak + 1);
+        localStorage.setItem("streak", JSON.stringify(streak + 1));
+    }
+}, [ lastVisit ])
+
   return (
     <div className="streak-bar-container" style={{ position: 'absolute', top: 0, left: 0 }}>
         <motion.div
