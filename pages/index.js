@@ -45,7 +45,7 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1> Focus AI  </h1> 
+            <h1> SkillQuest  </h1> 
           </div>
           <div className="header-subtitle">
             <h2> Enter A topic and master it through prompts </h2>
