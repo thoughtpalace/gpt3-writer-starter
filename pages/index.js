@@ -5,6 +5,7 @@ import buildspaceLogo from '../assets/buildspace-logo.png';
 
 import { useState } from 'react';
 import StreakBar from './components/streakbar';
+import FlashcardController from './components/flashcardcontroller';
 
 
 const Home = () => {
@@ -40,7 +41,7 @@ const Home = () => {
   return (
     <div className="root">
       <Head>
-        <title>Focus Ai!</title>
+        <title> SkillQuest!</title>
       </Head>
       <div className="container">
         <div className="header">
@@ -52,9 +53,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="streakbar-container" style={{ position: 'absolute', top: 0, left: 0 }}>
-   <StreakBar /> 
- </div>
+    
         <div className="prompt-container">
           <textarea 
           className="prompt-box"
@@ -86,6 +85,8 @@ const Home = () => {
     </div>
   </div>
 )}
+
+   <FlashcardController /> 
 
 
       </div>

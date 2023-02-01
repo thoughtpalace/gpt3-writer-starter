@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <meta property="og:title" content="Clap Back" key="title"/>
+        <meta property="og:title" content="SkillQuest" key="title"/>
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
       <body>
