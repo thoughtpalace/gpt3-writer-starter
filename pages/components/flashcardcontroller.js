@@ -44,13 +44,7 @@ const FlashcardController = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Topic:
-          <input type="text" value={topic} onChange={handleTopicChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+       
       {isLoading ? <div>Loading...</div> : (
         <div>
           {responses.map((response, index) => (
