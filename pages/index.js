@@ -146,6 +146,8 @@ const Home = () => {
   
     // Iterate through each line
     lines.forEach((line) => {
+      console.log("Raw JSON:", line); // Add this line to log the raw JSON string
+
       try {
         // Attempt to parse the line as JSON
         const obj = JSON.parse(line);

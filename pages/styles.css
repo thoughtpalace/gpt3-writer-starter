@@ -415,27 +415,58 @@ textarea {
 }
 
 
-
-.flashcard {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 20px;
-    width: 100%;
-    max-width: 610px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .flashcard-content {
-    text-align: center;
-  }
-  
-  .flashcard-content p {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 18px;
-  }
   
   .flashcard:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .flashcard {
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .flashcard h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  .flashcard p {
+    margin-bottom: 0;
+    font-size: 18px;
+    color: #ccc;
+  }
+
+
+  .flashcard-content {
+    text-align: center;
+  }
+ 
+
+  .generate-button {
+    background-color: #1db954;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+  
+  .generate-button:hover {
+    background-color: #00a650;
+    color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
