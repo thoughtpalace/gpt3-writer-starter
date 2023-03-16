@@ -52,31 +52,46 @@ const generateAction = async (req, res) => {
    /* Take the text of content and output  below and generate a response written in the style of Kevin Hart and Eddie Murphy. Make it feel like a funny story. Don't just list the points. Go deep into each one. Explain why using funny words. */
 
   // I build Prompt #2.
-  const secondPrompt = 
-  `
-    Take the subtopics an generate a question and answer format that would work with 
-    a quiz. Make sure the subtopics as a question and answer format. You should give the questions and the answers. If generate a question that requires math equations. Please include mathematical expresssions where necessary.  The questions generated from subtopics should be a mix from beginner to advanced. When you are done please include the correct answer to the question.
+  // const secondPrompt = 
+  // `
+  //   Take the subtopics an generate a question and answer format that would work with 
+  //   a quiz. Only generate one question in the response and make sure the subtopics as a question and answer format. You should give the questions and the answers. If generate a question that requires math equations. Please include mathematical expresssions where necessary.  The questions generated from subtopics should be a mix from beginner to advanced. When you are done please include the correct answer to the question.
+  //    Also remember to return question and answer properties in the JSON response.
 
-     Question: 
+  //    Question: 
 
-     Answer:
+  //    Answer:
 
 
-  content: ${req.body.userInput}
+  // content: ${req.body.userInput}
 
-  output : ${basePromptOutput.text}
+  // output : ${basePromptOutput.text}
 
-  response:
-  `
-  
+  // response:
+  // `
+
+const secondPrompt = 
+`
+Take the subtopics and generate a single question and answer pair in a quiz format. Make sure it's in a question and answer format. You should provide the question and its answer. If you generate a question that requires math equations, please include mathematical expressions where necessary. The questions generated from subtopics should be a mix of beginner to advanced levels. When you are done, please include the correct answer to the question. Also, remember to return question and answer properties in the JSON response.
+
+content: ${req.body.userInput}
+
+output : ${basePromptOutput.text}
+
+Response format: {"question": "Sample question?", "answer": "Sample answer"}
+
+response:
+`
+
+
   // I call the OpenAI API a second time with Prompt #2
   const secondPromptCompletion = await openai.createCompletion({
     model: 'text-davinci-002',
     prompt: `${secondPrompt}`,
     // I set a higher temperature for this one. Up to you!
-    temperature: 0.85,
+    temperature: 0.95,
 		// I also increase max_tokens.
-    max_tokens: 1250,
+    max_tokens: 500,
   });
   
   // Get the output
